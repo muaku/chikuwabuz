@@ -1,0 +1,17 @@
+Hello From Socket.io v2
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost:1024');
+
+  socket.emit('new_user', {
+  	room: "movie",
+  	host_name: "mk1",
+  	name: "user1"
+  });
+
+  socket.on("user_joined", function(data) {
+  	console.log(data)
+  })
+
+</script>
